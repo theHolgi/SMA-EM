@@ -5,7 +5,7 @@
 serials=30028xxxxx
 # features could filter serials to, but wouldn't see serials if these serials was not defines in SMA-EM serials
 # list of features to load/run
-#features=simplefswriter sample pvdata mqtt remotedebug symcon influxdb
+#features=simplefswriter sample pvdata mqtt rrdwriter remotedebug symcon influxdb
 features=simplefswriter
 
 [DAEMON]
@@ -54,6 +54,12 @@ pvtopic=SMA-PV/status
 # Debug settings
 debughost=mypc
 debugport=9100
+
+[FEATURE-rrdwriter]
+#Feed a mrtg (RRD) Round-Robin Database (RRD file)
+#Requires rrdtools to be installed
+file=logger.rrd
+fields=pconsume,psupply,p1consume,p1supply,p2consume,p2supply,p3consume,p3supply,i1,i2,i3,u1,u2,u3,frequency
 
 [FEATURE-symcon]
 # symcon
